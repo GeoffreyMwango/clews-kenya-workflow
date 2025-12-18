@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "=== CLEWS WORKFLOW START ==="
+
+# Convert CSV to OSeMOSYS data files
+otoole convert csv datafile data-out-2.6 data-test.txt config_otoole.yaml
+otoole convert csv datafile data-out-4.5 data-test.txt config_otoole.yaml
+otoole convert csv datafile data-out-8.5 data-test.txt config_otoole.yaml
+
+# Preprocess data
+python preprocess_data.py otoole data-test.txt data-test-pp.txt
+
+# Generate LP
+glpsol -m OSeMOSYS-pp.txt -d data-test-pp.txt --wlp data.lp --check
+
+# Solve with CBC
+cbc data.lp solve -solu dataKEN.sol
+
+# Convert results to CSV
+otoole -v results cbc csv dataKEN.sol results config_otoole.yaml
+
+# Visualize results
+otoole viz res datafile data-test.txt res.png config_otoole.yaml
+
+# Run CLEWS coupling
+./src/build/clewsy.py CLEWS-KEN.yaml
+
+echo "=== CLEWS WORKFLOW COMPLETE ==="
