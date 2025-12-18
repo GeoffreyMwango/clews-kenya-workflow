@@ -1,23 +1,19 @@
 # CLEWS Kenya Workflow
 
-This repository contains a reproducible Climate–Land–Energy–Water Systems (CLEWS)
-model for Kenya for the paper "Assessing the Impacts of Climate Change in Kenya Using CLEWs to Provide Policy Insights"
+This repository contains a reproducible Climate–Land–Energy–Water Systems (CLEWS) model
+for Kenya used in the paper *Assessing the Impacts of Climate Change in Kenya Using CLEWs*. :contentReference[oaicite:3]{index=3}
 
-## What this repository includes
-- Data preprocessing scripts
-- OSeMOSYS-based energy system model
-- Post-processing and visualization scripts
+## 🔧 Requirements
 
-## Software used
-- Python
-- OSeMOSYS
-- Geo-CLEWs
+- Python 3.9+
+- `otoole` (OSeMOSYS data conversion tool)
+- GLPK (`glpsol`)
+- CBC solver
+- Optional: Jupyter (for visualization)
 
-## How to run (basic)
-1. Download or clone the repository
-2. Install required Python packages
-3. Run scripts in the `scripts/` folder in order
+## 🚀 How to Run
 
-## Status
-This repository is under active development.
-
+1. Clone the repository:
+```bash
+git clone https://github.com/GeoffreyMwango/clews-kenya-workflow.git
+cd clews-kenya-workflow
