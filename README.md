@@ -1,7 +1,7 @@
 # CLEWS Kenya Workflow
 
 This repository contains a reproducible Climate–Land–Energy–Water Systems (CLEWS) model
-for Kenya used in the paper *Assessing the Impacts of Climate Change in Kenya Using CLEWs*. :contentReference[oaicite:3]{index=3}
+for Kenya used in the paper *Assessing the Impacts of Climate Change in Kenya Using CLEWs*. 
 
 ## 🔧 Requirements
 
